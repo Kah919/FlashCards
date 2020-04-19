@@ -1,27 +1,15 @@
 import React, { useState } from 'react';
-import FlashcardList from './FlashcardList';
+import Flashcard from './Flashcard';
 
-export default function FlashcardList() {
-    const { flashcards, setFlashcards } = useState(SAMPLE_FLASHCARDS)
+export default ({ flashcards }) => {
+    console.log(flashcards)
     return (
-        <FlashcardList flashcards={ flashcards }/>
+        <div className="card-grid">
+            { flashcards.map(flashcard => {
+                return <Flashcard flashcard={ flashcard } key={ flashcard.id } />
+            })}
+        </div>
     )
 }
 
-const SAMPLE_FLASHCARDS = [
-    {
-        id: 1,
-        question: "Amazon S3(Simple Storage System",
-        answer: "State and cover info or data from anywhere on the internet"
-    },
-    {
-        id: 2,
-        question: "Amazon S3(Simple Storage System",
-        answer: "State and cover info or data from anywhere on the internet"
-    },
-    {
-        id: 3,
-        question: "Amazon S3(Simple Storage System",
-        answer: "State and cover info or data from anywhere on the internet"
-    }
-]
+
