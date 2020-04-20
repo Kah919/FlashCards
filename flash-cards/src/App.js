@@ -6,7 +6,9 @@ import './app.css';
 function App() {
   const [ flashcards, setFlashcards ] = useState(SAMPLE_FLASHCARDS);
   return (
-    <FlashcardList flashcards={ flashcards }/>
+    <div className="container">
+      <FlashcardList flashcards={ flashcards }/>
+    </div>
   );
 }
 
